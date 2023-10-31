@@ -1,0 +1,44 @@
+<html>
+<head>
+<script type="text/javascript">
+
+function convert ()
+{
+
+	var a = document.MyForm.FirstName.value; //document.MyForm.FirstName.value;
+	document.MyForm.FirstName.value = a.toUpperCase ();
+	c=document.getElementById ("LastName");
+	var b = c.value;
+	c.value = b.toUpperCase();
+}
+
+function checkFirstName()
+{
+    console.log("".length);
+	console.log("".length);
+
+	var a=document.MyForm.FirstName.value;
+		if(a=="") //if we give space in the double codes then in the if condtidion it will become string to alert msg will appearer 
+		{
+		er=document.getElementById("error"); 
+		er.innerHTML=" cbdcbQJCBJQBCEHBCEb  ";
+	}
+}
+function clearMessage()
+{
+	er=document.getElementById("error"); 
+	er.innerHTML="*";
+}
+</script>
+</head>
+
+<body>
+<form name="MyForm">
+<input name = "FirstName" type="text" id="MyName" onblur="checkFirstName()" onfocus="clearMessage()"/><label id="error" style="color:red">*</label><br>
+<input name = "LastName" type="text" id="LastName" /><br>
+<input type="button" onclick="convert()" value="Convert" />
+</form>
+</body>
+
+</html>
+

@@ -1,0 +1,47 @@
+<html>
+<head>
+<script type="text/javascript">
+var txt=""
+function reverse(s)
+{
+   var sReverse = "";
+   for (var k = 1; k < s.length; k++)
+   {
+      sReverse = s.charAt(k) + sReverse;
+   }
+   return sReverse;
+}
+
+function message()
+{
+try
+   {
+   //i++;
+   alert("Debugging is a process of");
+   alert("finding the location of error and ");
+   alert("Fixing it");
+   var rev=reverse("Hello");
+	document.write ("Reversed string "+rev+"<bR>")
+   alert("Welcome guest!");
+   }
+catch(err)
+   {
+     txt="err.message\n\n";
+     txt+="Click OK to continue viewing this page.\n";
+     
+	window.alert (txt);
+   } finally
+	{
+		document.write ("Error Processed.");
+	}
+
+}
+</script>
+</head>
+
+<body>
+<input type="button" value="View message" onclick="message()" />
+</body>
+
+</html>
+

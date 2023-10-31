@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Store</title>
+</head>
+<body>
+
+<!-- Home Page -->
+<div id="home" style="display: block;">
+    <h1>Welcome to Our Online Store</h1>
+    <a href="#" onclick="showLoginPage()">Login</a>
+</div>
+
+<!-- Login Page -->
+<div id="login" style="display: none;">
+    <h1>Login</h1>
+    <form id="loginForm" onsubmit="return validateLogin()">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+        <input type="submit" value="Login">
+    </form>
+</div>
+
+<!-- Create Product Page -->
+<div id="createProduct" style="display: none;">
+    <h1>Create a Product</h1>
+    <form id="productForm" onsubmit="return createProduct()">
+        <label for="product_name">Product Name:</label>
+        <input type="text" id="product_name" name="product_name" required><br><br>
+        <label for="product_description">Product Description:</label>
+        <textarea id="product_description" name="product_description" required></textarea><br><br>
+        <label for="product_price">Price:</label>
+        <input type="number" id="product_price" name="product_price" required><br><br>
+        <input type="submit" value="Create Product">
+    </form>
+</div>
+
+<!-- Product Display Page -->
+<div id="productDisplay" style="display: none;">
+    <h1>Product Details</h1>
+    <ul>
+        <li><strong>Product Name:</strong> <span id="displayedProductName"></span></li>
+        <li><strong>Description:</strong> <span id="displayedProductDescription"></span></li>
+        <li><strong>Price:</strong> $<span id="displayedProductPrice"></span></li>
+    </ul>
+    <button id="buyButton" onclick="buyProduct()">Buy</button>
+</div>
+
+<script>
+    function showLoginPage() {
+        document.getElementById("home").style.display = "none";
+        document.getElementById("login").style.display = "block";
+    }
+
+    function validateLogin() {
+        // Here you can add server-side validation logic
+        return true; // Return true for now to submit the form
+    }
+
+    function createProduct() {
+        // Here you can add server-side code to create a product
+        // For simplicity, we'll just display the product details
+        const productName = document.getElementById("product_name").value;
+        const productDescription = document.getElementById("product_description").value;
+        const productPrice = document.getElementById("product_price").value;
+
+        document.getElementById("displayedProductName").textContent = productName;
+        document.getElementById("displayedProductDescription").textContent = productDescription;
+        document.getElementById("displayedProductPrice").textContent = productPrice;
+
+        document.getElementById("createProduct").style.display = "none";
+        document.getElementById("productDisplay").style.display = "block";
+        return false; // Prevent form submission
+    }
+
+    function buyProduct() {
+        alert("Product purchased!");
+        // You can add further logic here for processing the purchase.
+    }
+</script>
+
+</body>
+</html>

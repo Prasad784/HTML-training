@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>HTML Book</title>
+</head>
+<body>
+<script>
+      function saveData()
+{
+  i=document.forms[0].isbnno.value;
+  t=document.forms[0].booktitle.value;
+  console.log(i);
+  console.log(t);
+  localStorage.isbn=i;
+  localStorage.title=t;
+
+}
+
+function getData()
+{
+ p=document.getElementsByName("data");
+ p[0].innerHTML =localStorage.isbn;
+ p[1].innerHTML =localStorage.title;
+}
+</script>
+<center><b>BOOK details</b>
+   <form>
+ISBN:&nbsp&nbsp <input type="text" name="isbnno"/><br>
+Title: &nbsp&nbsp <input type="text" name="booktitle"/><br><br><br>
+<input type="button" value="SAVE" onclick="saveData()"/>
+<input type="button" value="GET" onclick="getData()"/>
+<input type="reset" value="RESET"/><br>
+<br>
+<p name="data">Book data</p>
+<br>
+<p name="data"> alibaba</p>
+</form>
+</center>
+
+
+</body>
+</html>

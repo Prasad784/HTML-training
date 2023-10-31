@@ -1,0 +1,41 @@
+<htm>
+    <body>
+        <h2>
+            ES6 for of loop
+        </h2>
+        <P>
+            add values to set
+        </P>
+        <p id="demo">
+        </P>
+
+        <script>
+            //create a set
+            const letters=new Set();
+
+            //add value to the set
+            letters.add("a");
+            letters.add("b");
+            letters.add("c");
+            letters.add("d");
+
+            //display set size
+
+            document.getElementById("demo").innerHTML=letters.size;
+            let itr=letters.values();
+
+            for(i=0;i<letters.size;i++)
+            {
+
+            var lt=itr.next();
+
+            document.getElementById("demo").innerHTML +="<br>" +lt.value;
+
+
+            }
+            for(v of letters)
+              document.getElementById("forofloop").innerHTML+= v +"<br>";
+
+        </script>
+    </body>
+</htm>

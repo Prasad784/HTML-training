@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+</head>
+
+<body>
+
+    <h2>
+
+        CLASSES
+
+    </h2>
+
+    <p>
+
+       
+
+       
+
+       bike name  <input type="text"  id="bikeName" placeholder="bike name ">
+
+       
+
+       manufacturingYear <input type="text" id="manufacturingYear" placeholder="year">
+
+    </p>
+
+   
+
+    <button onclick="saveBikeInfo()">Save</button>
+
+    <button onclick="displayBikeInfo()">Get</button>
+
+    <p id="demo"></p>
+
+    <script>
+
+        class Bike {
+
+            name = "RE";
+
+            year = "2010";
+
+ 
+
+            setName(bikeName) {
+
+                this.name = bikeName;
+
+            }
+
+            setYear(mfgYear) {
+
+                this.year = mfgYear;
+
+            }
+
+            getYear() {
+
+                return this.year;
+
+            }
+
+            getName() {
+
+                return this.name;
+
+            }
+
+        }
+
+        const b1 = new Bike();
+
+        function saveBikeInfo() {
+
+            const userInputName = document.getElementById("bikeName").value;
+
+            const userInputYear = document.getElementById("manufacturingYear").value;
+
+            b1.setName(userInputName);
+
+            b2.setYear(userInputYear);
+
+        }
+
+        function displayBikeInfo() {
+
+            document.getElementById("demo").innerHTML =
+
+                b1.getName() + " " + b2.getYear();
+
+        }
+
+    </script>
+
+</body>
+
+</html>
+
+ 
+
+has context menu

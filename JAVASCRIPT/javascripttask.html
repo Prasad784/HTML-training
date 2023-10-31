@@ -1,0 +1,59 @@
+<html>
+    <head><center>JavaScript Practical Test</center>
+        
+    </head>
+    <script type="text/javascript">
+    function validate()
+    {
+        var fName=document.getElementById("fName").value;
+        var lName=document.getElementById("lName").value;
+        var x=document.getElementById("x").value;
+        var y=document.getElementById("y").value;
+        var z=document.getElementById("z").value;
+        var p=document.getElementById("p").value;
+         
+        const yRegex = 
+
+        var valid = true;
+        if(!fName,!lName)
+        {
+            alert("firstname greater than 10")
+            ferror.innerHTML = "First name is mandatory";
+            var valid = false;
+            else
+            alert("Size is filled")
+            var valid = false;
+        }
+    }
+
+
+
+
+
+    </script>
+
+    <body><form id="MyForm" name="Validation" onsubmit="validate()">
+        <h3 style="color:red">1.Tell us about yourself</h3>
+        <b style="color:blue">YourName</b><br><br>
+        <b style="color: pink;">firstName</b><br><input maxlength="20" type="text" id="fName" ><br><br>
+        <br>
+
+        <b style="color: pink;">lastName</b><br><input maxlength="20" type="text" id="lName" ><br><br>
+        <b style="color: blue;" >postal Code:</b><br>
+        <input type="text" id="x"><br><br>
+
+
+        <h3 style="color: red;">2.Select an ID and password</h3><br><br>
+
+        <b style="color:blue">userID</b><br><input name="" type="text" id="y"><br><br>
+
+        <b style="color:blue">paasword</b><br><input type="text" id="z"><br><br>
+
+        <b style="color:blue">re-type Password</b><br><input type="text" id="p"><br><br>
+        <br>
+        <button onclick="submit()">submit</button>
+        <button onclick="reset">reset</button>
+        </form>
+
+    </body>
+</html>

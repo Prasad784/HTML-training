@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>
+            dom manipulation
+        </title>
+    </head>
+    <script>
+        function enableDisable(){
+            v=document.forms[0].status.checked;
+            //window.alert(document.forms[0].status.checked);
+            var b=document.getElementById("submit1");
+            if(v==true)        
+                b.disabled=false;
+            else
+                b.disabled=true;
+        } 
+        function  showName()
+        {
+            //btag=document.createElement("b");            //horizantial
+            //txtnode=document.createTextNode              //horizantial
+            //(document.forms[0].firstname.value);         //horizantial
+            //btag.appendChild(txtnode);                   //horizantial
+            dv=document.getElementById("d1");
+            //dv.appendChild(btag);                        //horizantial
+            dv.innerHTML+="<b>"+document.forms[0].firstname.value +"<b/><br>" //it is for vertically
+        }
+    </script>
+    <body>
+        <form>
+            NAME:<input type="text" name="firstname" /><br>
+            AGREE TO TERMS & CONDITIONS:<input type="checkbox" name="status" onchange="enableDisable()"/><br>
+            <input type="button" value="save"  id="submit1" onclick="showName()" jbhi /><br>
+        </form>
+        <div id="d1" width="300px" height="500px" style="border:3px dotted">
+
+        </div>
+        </body>
+</html>

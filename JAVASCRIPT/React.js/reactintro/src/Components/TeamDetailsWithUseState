@@ -1,0 +1,53 @@
+import { useState } from "react";
+function TeamDetailsWithUseState()
+
+{
+
+     const [teamName,setTeamName] = useState("Delhi Captails");
+     const [teamCaptain,setCaptainName]= useState("David Warner");
+     const [baseLocation,setBaseLocation]= useState("New Delhi");
+     
+     function validate(){
+       let vstatus=false;
+        if(teamName ==="")
+          window.alert("Name cannot be blank");
+        else
+        vstatus=true;
+
+        if(teamCaptain ==="")
+          window.alert("Captain name cannot be blank");
+        else 
+        vstatus=true;
+      }
+
+
+        return (
+        <div>
+            <centre>
+                <form action="javascript::window.alert('All OK')" onSubmit={validate()}>
+                    <label>
+                        Team name
+                    </label>
+                    <input type="text" onChange={e=>{setTeamName(e.target.value)}} defaultValue={teamName}/><br></br>
+                    <label>Team Captain</label><input type="text" onChange={e=>{setTeamCaptain(e.target.value)}} defaultValue={teamCaptain}/><br></br>
+                    <label>Base location</label>
+                    <select size="1" name="base_location" defaultValue={baseLocation}>
+                        <option value="MI">Mumbai</option>
+                        <option value="CSK">Chennai</option>
+                        <option value="RCB">Royal Challengers Bangalore</option>
+                        <option value="KKR">Kolkata Knight Riders</option>
+                        <option value="RR">Rajasthan Royals</option>
+                        <option value="SRH">SunRisers Hyderabad</option>
+                    </select><br></br>
+                    <input type="submit" value="Save" />
+                </form>
+                <br>
+                </br>
+                <b>Team name</b>{teamName}<br></br>
+                <b>Team Captain</b>{teamCaptain}<br></br>
+                <b>Base location</b>{baseLocation}<br></br><br></br>
+            </centre>
+        </div>)
+}
+
+export default TeamDetailsWithUseState;

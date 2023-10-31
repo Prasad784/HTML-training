@@ -1,0 +1,18 @@
+b{color:red; border:3px; border-style:dashed;background-color:yellow}
+p{
+border:6px solid;
+color:yellow;
+font-size:28
+}
+
+ 
+
+#p2{color:Indigo;border:4px;border-style:dotted}
+
+ 
+
+input
+{
+background-color:orange
+}
+input[type="text"]{width:150;height:75;color:brown;font-size:20}

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html>
+
+    <body>
+
+        <script type="text/javascript">
+
+            function validateForm() {
+
+                var firstName = document.forms["MyForm"]["MyName"].value;
+
+                var lastName = document.forms["MyForm"]["LastName"].value;
+
+                var postalCode = document.forms["MyForm"]["PostalCode"].value;
+
+                var userID = document.forms["MyForm"]["UserID"].value;
+
+                var password = document.forms["MyForm"]["Password"].value;
+
+                var retypePassword = document.forms["MyForm"]["RetypePassword"].value;
+
+ 
+
+                var firstNameError = document.getElementById("error_fname");
+
+                var lastNameError = document.getElementById("error_lname");
+
+                var postalCodeError = document.getElementById("error_postal");
+
+                var userIDError = document.getElementById("error_userid");
+
+                var passwordError = document.getElementById("error_password");
+
+ 
+
+                var valid = true;
+
+ 
+
+                // First Name validation
+
+                if (firstName === "") {
+                    alert("The firstname must be less than 10 characters")
+
+                    firstNameError.innerHTML = "First name is mandatory";
+
+                    valid = false;
+
+                } else if (!/^[a-zA-Z\s]{1,25}$/.test(firstName)) {
+
+                    firstNameError.innerHTML = "Invalid characters in First Name";
+
+                    valid = false;
+
+                } else {
+
+                    firstNameError.innerHTML = "*";
+
+                }
+
+ 
+
+                // Last Name validation
+
+                if (lastName === "") {
+
+                    alert("The lastname must be less than 10 characters")
+                    lastNameError.innerHTML = "Last name is mandatory";
+
+                    valid = false;
+
+                } else if (!/^[a-zA-Z\s]{1,25}$/.test(lastName)) {
+
+                    lastNameError.innerHTML = "Invalid characters in Last Name";
+
+                    valid = false;
+
+                } else {
+
+                    lastNameError.innerHTML = "*";
+
+                }
+
+ 
+
+                // Postal Code validation
+
+                if (!/^\d{7,}$/.test(postalCode)) {
+
+                    postalCodeError.innerHTML = "Postal Code must contain numbers only and be greater than 6 digits";
+
+                    valid = false;
+
+                } else {
+
+                    postalCodeError.innerHTML = "*";
+
+                }
+
+ 
+
+                // UserID validation
+
+                var userIDPattern = /^[a-zA-Z][0-9]*$/;
+
+                if (!userIDPattern.test(userID)) {
+
+                    userIDError.innerHTML = "UserID must start with an alphabet and contain only numbers";
+
+                    valid = false;
+
+                } else {
+
+                    userIDError.innerHTML = "*";
+
+                }
+
+ 
+
+                // Password validation
+
+                if (password !== retypePassword) {
+
+                    passwordError.innerHTML = "Passwords do not match";
+
+                    valid = false;
+
+                } else {
+
+                    passwordError.innerHTML = "*";
+
+                }
+
+ 
+
+                return valid;
+
+            }
+
+        </script>
+
+        <form name="MyForm" onsubmit="return validateForm()">
+
+            <p style="font-size: 25px; color: red;">1. Tell us about Yourself</p>
+
+            <p style="font-size: 20px; color: blue;">Your Name</p>
+
+            <p style="font-size: 20px; color: pink;"><i>First Name:</i><br>
+
+                <input maxlength="25" type="text" name="MyName" /></p>
+
+            <label id="error_fname" style="color: red;">*<br></label>
+
+ 
+
+            <p style="font-size: 20px; color: pink;">
+
+                <i>Last Name:</i><br> <input type="text" name="LastName" /></p>
+
+            <label id="error_lname" style="color: red;">*<br></label>
+
+ 
+
+            <p style="font-size: 25px; color: blue;">
+
+                <b>Postal Code:</b><br> <input type="number" name="PostalCode" /><br></p>
+
+            <label id="error_postal" style="color: red;">*<br></label>
+
+ 
+
+            <p style="font-size: 25px; color: red;">
+
+                2. Select an ID and password</p>
+
+ 
+
+            <p style="font-size: 20px; color: blue;">
+
+                <b>UserID:</b><br> <input type="text" name="UserID" /><br></p>
+
+            <label id="error_userid" style="color: red;">*<br></label>
+
+ 
+
+            <p style="font-size: 20px; color: blue;">
+
+                <b>Password:</b><br> <input type="password" name="Password" /><br></p>
+
+ 
+
+            <p style="font-size: 20px; color: blue;">
+
+                <b>Re-type Password:</b><br> <input type="password" name="RetypePassword" /><br></p>
+
+            <label id="error_password" style="color: red;">*<br></label>
+
+ 
+
+            <input type="submit" value="Submit" />
+
+            <input type="reset" value="Reset" />
+
+        </form>
+
+    </body>
+
+</html>
+
+ 
+
+
+/**
+
+function validate()
+    {
+     
+     var FirstName=document.form["MyForm"]["MyName"].value;
+     
+
+     var FirstNameError = document.getElementById("error_fname");
+
+     var valid = true;
+     if (FirstName=="")
+    {
+        alert("The name must be greater than 10 characters")
+        document.getElementById("x").innerHTML()
+        valid = false;
+
+                } else if (!/^[a-zA-Z\s]{1,25}$/.test(firstName)) {
+
+                    firstNameError.innerHTML = "Invalid characters in First Name";
+
+                    valid = false;
+    }
+}
+**/

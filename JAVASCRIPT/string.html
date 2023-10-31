@@ -1,0 +1,26 @@
+<html>
+    <body>
+    <script>
+        name="GAVS technologies, Chennai";
+        document.writeln("Length"+name.length);
+        document.writeln("<br>Position of e"+name.indexOf('e'));
+        document.writeln("<br>Last position of e"+name.lastIndexOf('e'));
+        document.writeln("<br>Character @ 10:"+name.charAt(10));
+        document.writeln("<br>All characters from 6th pos:" + name.substr(6));
+        document.writeln("<br>All characters from 6th to 15th pos:"+name.substr(6,15));
+        names=name.split(' ');
+        document.writeln("<br>names[0]:"+names[0]);
+        document.writeln("<br>names[1]:"+names[1]);
+        document.writeln("<br>names[2]:"+names[2]);
+        document.writeln("<br>Slice:"+name.slice(''));
+        document.writeln("<br>Upper case:"+name.toUpperCase());
+        document.writeln("<br>Lower case:"+name.toLowerCase());
+
+        arr=name.slice(' ');
+        document.writeln("<br>"+arr[0]);
+        document.writeln("<br>"+arr[1]);
+        document.writeln("<br>"+arr[2]);
+        document.writeln("<br>"+arr[3]);
+    </script>
+    </body>
+</html>
